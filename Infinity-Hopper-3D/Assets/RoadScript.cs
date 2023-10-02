@@ -22,7 +22,10 @@ public class RoadScript : MonoBehaviour
     {
         getRoadPosition();
 
-        //if()
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            transform.position = new Vector3(roadPosition.x, roadPosition.y - 2, roadPosition.z);
+        }
 
     }
 
