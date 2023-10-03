@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class RoadSpawnerScript : MonoBehaviour
 {
-    GameObject road;
+    GameObject road;// get road prefab at runtime
     LogicScript logicScript;
-    // access countUntillNewRoad from logic
+    // access countUntillNewRoad from logicScript
     int countUntillNewRoad;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        // access logic
+        // access logic script
         logicScript = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
         updateRoadVariable();
         createNewRoad();
@@ -45,6 +45,7 @@ public class RoadSpawnerScript : MonoBehaviour
         Instantiate(road, transform.position, transform.rotation);
     }
 
+    //Prevents roads from being accessed after being destroyed
     private void updateRoadVariable()
     {
         if(road == null)
