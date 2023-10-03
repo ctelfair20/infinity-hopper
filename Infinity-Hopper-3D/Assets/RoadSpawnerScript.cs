@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class RoadSpawnerScript : MonoBehaviour
 {
-    [SerializeField]
     GameObject road;
     LogicScript logicScript;
     // access countUntillNewRoad from logic
@@ -16,7 +15,8 @@ public class RoadSpawnerScript : MonoBehaviour
     {
         // access logic
         logicScript = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
-        
+        road = GameObject.FindGameObjectWithTag("Road");
+        createNewRoad();
     }
 
     // Update is called once per frame
@@ -30,7 +30,7 @@ public class RoadSpawnerScript : MonoBehaviour
         countUntillNewRoad = logicScript.countUntillNewRoad;
 
         // if countUntillNewRoad is at 4
-        if (countUntillNewRoad == 4)
+        if (countUntillNewRoad >= 4)
         {
             // spawn new road
             createNewRoad();
@@ -39,7 +39,7 @@ public class RoadSpawnerScript : MonoBehaviour
         }
     }
 
-    private void createNewRoad()
+    public void createNewRoad()
     {
         Instantiate(road, transform.position, transform.rotation);
     }
