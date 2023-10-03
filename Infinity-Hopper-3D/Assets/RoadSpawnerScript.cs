@@ -15,13 +15,14 @@ public class RoadSpawnerScript : MonoBehaviour
     {
         // access logic
         logicScript = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
-        road = GameObject.FindGameObjectWithTag("Road");
+        updateRoadVariable();
         createNewRoad();
     }
 
     // Update is called once per frame
     void Update()
     {
+        updateRoadVariable();
         roadSpawner();
     }
 
@@ -44,6 +45,13 @@ public class RoadSpawnerScript : MonoBehaviour
         Instantiate(road, transform.position, transform.rotation);
     }
 
+    private void updateRoadVariable()
+    {
+        if(road == null)
+        {
+            road = GameObject.FindGameObjectWithTag("Road");
+        }
+    }
     //THOUGHTS ON WHAT THIS SCRIPT IS SUPPOSED TO DO
     //Create new roads periodically
 
