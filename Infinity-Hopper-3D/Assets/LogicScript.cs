@@ -24,6 +24,7 @@ public class LogicScript : MonoBehaviour
     void Update()
     {
         getFrogPosition();
+        upArrowPress();
     }
 
     private void getFrogPosition()
@@ -39,6 +40,16 @@ public class LogicScript : MonoBehaviour
     public void increaseCountUntillNewRoad()
     {
         countUntillNewRoad++;
+    }
+
+    private void upArrowPress()
+    {
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            // Allows road to move down and lane count to be tracked in one place
+            increaseLaneCount();
+            increaseCountUntillNewRoad();
+        }
     }
 
     //THOUGHTS ON WHAT I WANT THIS SCRIPT TO DO

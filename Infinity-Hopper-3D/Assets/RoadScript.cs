@@ -5,12 +5,13 @@ using UnityEngine;
 public class RoadScript : MonoBehaviour
 {
     Vector3 roadPosition;
+    //LogicScript logicScript;
 
 
     // Start is called before the first frame update
     void Start()
     {
-       
+        //logicScript = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
     }
 
     // Update is called once per frame
@@ -27,6 +28,8 @@ public class RoadScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             transform.position = new Vector3(roadPosition.x, roadPosition.y-2, roadPosition.z);
+            //logicScript.increaseLaneCount();
+            //logicScript.increaseCountUntillNewRoad();
         }
 
     }
