@@ -8,10 +8,12 @@ public class CarSpawnerScript : MonoBehaviour
     GameObject car;
     public int spawnRate = 3;
     public float timer = 0;
+    public float carSpeed;
 
     // Start is called before the first frame update
     void Start()
     {
+        carSpeed = Random.Range(1, 3);
         createNewCar();
     }
 
@@ -24,6 +26,8 @@ public class CarSpawnerScript : MonoBehaviour
     private void createNewCar()
     {
         GameObject carInstance = Instantiate(car, transform.position, transform.rotation);
+        CarScript carScript = carInstance.GetComponent<CarScript>();
+        carScript.speed = carSpeed;
     }
 
     private void spawnerTimer()
