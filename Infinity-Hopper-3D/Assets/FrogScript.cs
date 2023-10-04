@@ -21,21 +21,13 @@ public class FrogScript : MonoBehaviour
 
     private void frogMovement()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            logicScript.increaseLaneCount();
-            logicScript.increaseCountUntillNewRoad();
-            //move frog up
-        }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-
             //move frog right
             frogMoveRight();
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-
             //move frog left
             frogMoveLeft();
         }
@@ -43,11 +35,15 @@ public class FrogScript : MonoBehaviour
 
     private void frogMoveRight()
     {
-        transform.position = new Vector3(1, 0, -0.01f);
+        if(transform.position.x < 1)
+        {
+            transform.position = new Vector3(transform.position.x+1, transform.position.y, transform.position.z);
+        }
     }
 
     private void frogMoveLeft()
     {
-        transform.position = new Vector3(-1, 0, -0.01f);
+        if (transform.position.x > -1)
+            transform.position = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
     }
 }
