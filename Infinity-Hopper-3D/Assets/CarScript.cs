@@ -16,11 +16,20 @@ public class CarScript : MonoBehaviour
     void Update()
     {
         carMovement();
+        destroyCar();
     }
 
     private void carMovement()
     {
         // move car to the left smoothly
         transform.Translate(Vector3.right * (Time.deltaTime * speed));
+    }
+
+    private void destroyCar()
+    {
+        if (gameObject != null && transform.position.x  >= 3)
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -29,13 +29,25 @@ public class FrogScript : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            
+
             //move frog right
+            frogMoveRight();
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            
+
             //move frog left
+            frogMoveLeft();
         }
+    }
+
+    private void frogMoveRight()
+    {
+        transform.position = new Vector3(1, 0, -0.01f);
+    }
+
+    private void frogMoveLeft()
+    {
+        transform.position = new Vector3(-1, 0, -0.01f);
     }
 }
