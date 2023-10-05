@@ -22,7 +22,8 @@ public class CarScript : MonoBehaviour
     private void carMovement()
     {
         // move car to the left smoothly
-        transform.Translate(Vector3.right * (Time.deltaTime * speed));
+        // car prefab as been rotated 90 degrees so Vector3.down moves the car to the right
+        transform.Translate(Vector3.down * (Time.deltaTime * speed));
     }
 
     private void destroyCar()

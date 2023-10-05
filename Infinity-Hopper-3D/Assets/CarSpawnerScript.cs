@@ -26,7 +26,7 @@ public class CarSpawnerScript : MonoBehaviour
 
     private void createNewCar()
     {
-        GameObject carInstance = Instantiate(car, transform.position, transform.rotation);
+        GameObject carInstance = Instantiate(car, transform.position, car.transform.rotation);
         CarScript carScript = carInstance.GetComponent<CarScript>();
         carScript.speed = carSpeed;
     }

@@ -155,6 +155,7 @@ MonoBehaviour:
   car: {fileID: 6959092771707801367, guid: 5f52f108c6da94039b4ddb427a56a513, type: 3}
   spawnRate: 3
   timer: 0
+  carSpeed: 0
 --- !u!4 &36153396
 Transform:
   m_ObjectHideFlags: 0
@@ -214,6 +215,53 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &591681647
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 591681649}
+  - component: {fileID: 591681648}
+  m_Layer: 0
+  m_Name: SpawnerPlacer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &591681648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591681647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7587f863e4bf42eeaf9e3d69677007d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  test: 0100000002000000030000000400000005000000
+  test2: 
+  test3: 
+--- !u!4 &591681649
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591681647}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -437,6 +485,7 @@ MonoBehaviour:
   car: {fileID: 6959092771707801367, guid: 5f52f108c6da94039b4ddb427a56a513, type: 3}
   spawnRate: 3
   timer: 0
+  carSpeed: 0
 --- !u!4 &1078658819
 Transform:
   m_ObjectHideFlags: 0
@@ -484,6 +533,7 @@ MonoBehaviour:
   car: {fileID: 6959092771707801367, guid: 5f52f108c6da94039b4ddb427a56a513, type: 3}
   spawnRate: 3
   timer: 0
+  carSpeed: 0
 --- !u!4 &1173359569
 Transform:
   m_ObjectHideFlags: 0
@@ -732,3 +782,4 @@ SceneRoots:
   - {fileID: 1173359569}
   - {fileID: 36153396}
   - {fileID: 1078658819}
+  - {fileID: 591681649}
