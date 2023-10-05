@@ -21,6 +21,7 @@ public class CarSpawnerScript : MonoBehaviour
     void Update()
     {
         spawnerTimer();
+        spawnerMovement();
     }
 
     private void createNewCar()
@@ -40,6 +41,23 @@ public class CarSpawnerScript : MonoBehaviour
         {
             timer = 0;
             createNewCar();
+        }
+    }
+
+    private Vector3 getSpawnerPosition()
+    {
+        Vector3 spawnerPosition = transform.position;
+        return spawnerPosition;
+    }
+
+    private void spawnerMovement()
+    {
+        Vector3 spawnerPosition = getSpawnerPosition();
+
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            transform.position = new Vector3(
+                spawnerPosition.x, spawnerPosition.y - 2, spawnerPosition.z);
         }
     }
 }
