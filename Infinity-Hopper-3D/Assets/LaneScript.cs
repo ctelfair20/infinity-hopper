@@ -4,10 +4,21 @@ using UnityEngine;
 
 public class LaneScript : MonoBehaviour
 {
+    int spawnRate;
+    int speed;
+    int offsetPosition;
+    float rotation;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        // rate at which cars spawn. Must be higher than speed
+        spawnRate = 4;
+        speed = 2;
+        // either -2 or 2
+        offsetPosition = -2;
+        // if offset is negative
+        rotation = -90; // 90 if offset is positive
     }
 
     // Update is called once per frame
