@@ -222,6 +222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4012356569265494553}
   - component: {fileID: -4153914245466507836}
+  - component: {fileID: 7462549983155376610}
   m_Layer: 0
   m_Name: Road
   m_TagString: Road
@@ -260,6 +261,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f46265bac0e5143a29ac68897cfb2eef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &7462549983155376610
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5411297538060859953}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.638621, y: 8.034666, z: 1}
+  m_Center: {x: -0.024257421, y: 0.00000023841858, z: 0}
 --- !u!1 &5505596681801303918
 GameObject:
   m_ObjectHideFlags: 0

@@ -46,6 +46,12 @@ public class RoadScript : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        other.transform.parent = transform;
+    }
+
     //THOUGHTS ON WHAT THIS SCRIPT IS SUPPOSED TO DO
     //Tell the road to move toward the frog on touch and keyboard press lane by lane
     //Remove roads when out of view
