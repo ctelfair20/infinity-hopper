@@ -15,8 +15,8 @@ public class LaneScript : MonoBehaviour
         // rate at which cars spawn. Must be higher than speed
         spawnRate = 4;
         speed = 2;
-        // either -2 or 2
-        offsetPosition = -2;
+        // either -3 or 3
+        offsetPosition = -3;
         // if offset is negative
         rotation = -90; // 90 if offset is positive
     }
