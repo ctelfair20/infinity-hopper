@@ -22,6 +22,7 @@ public class CarSpawnerScript : MonoBehaviour
     {
         spawnerTimer();
         spawnerMovement();
+        destroySpawner();
     }
 
     private void createNewCar()
@@ -58,6 +59,14 @@ public class CarSpawnerScript : MonoBehaviour
         {
             transform.position = new Vector3(
                 spawnerPosition.x, spawnerPosition.y - 2, spawnerPosition.z);
+        }
+    }
+
+    private void destroySpawner()
+    {
+        if (gameObject != null && transform.position.y <= -5)
+        {
+            Destroy(gameObject);
         }
     }
 }
