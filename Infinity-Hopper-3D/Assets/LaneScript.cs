@@ -8,10 +8,13 @@ public class LaneScript : MonoBehaviour
     int speed;
     int offsetPosition;
     float rotation;
+    public CarPoolScript carPoolScript;
 
     // Start is called before the first frame update
     void Start()
     {
+        // get carPoolScript
+        //carPoolScript
         // rate at which cars spawn. Must be higher than speed
         spawnRate = 4;
         speed = 2;
