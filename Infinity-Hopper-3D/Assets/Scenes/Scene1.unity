@@ -123,6 +123,52 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &32941220
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 32941222}
+  - component: {fileID: 32941221}
+  m_Layer: 0
+  m_Name: carPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &32941221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32941220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ba8ffe60b7e0492ea1952159a9bfef6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carPrefab: {fileID: 6959092771707801367, guid: 5f52f108c6da94039b4ddb427a56a513, type: 3}
+  carPoolList: []
+--- !u!4 &32941222
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32941220}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5, y: 3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &335978996
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,63 +355,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &694214102
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1218464487739030335, guid: 5f52f108c6da94039b4ddb427a56a513, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1218464487739030335, guid: 5f52f108c6da94039b4ddb427a56a513, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1218464487739030335, guid: 5f52f108c6da94039b4ddb427a56a513, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1218464487739030335, guid: 5f52f108c6da94039b4ddb427a56a513, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 1218464487739030335, guid: 5f52f108c6da94039b4ddb427a56a513, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1218464487739030335, guid: 5f52f108c6da94039b4ddb427a56a513, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1218464487739030335, guid: 5f52f108c6da94039b4ddb427a56a513, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 1218464487739030335, guid: 5f52f108c6da94039b4ddb427a56a513, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1218464487739030335, guid: 5f52f108c6da94039b4ddb427a56a513, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1218464487739030335, guid: 5f52f108c6da94039b4ddb427a56a513, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 6959092771707801367, guid: 5f52f108c6da94039b4ddb427a56a513, type: 3}
-      propertyPath: m_Name
-      value: Car
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 5f52f108c6da94039b4ddb427a56a513, type: 3}
 --- !u!1001 &763639420
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -435,6 +424,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MagentaLane
       objectReference: {fileID: 0}
+    - target: {fileID: 6560636682097281033, guid: 4de9f16d552f74b08bade1e2069e4138, type: 3}
+      propertyPath: carPoolScript
+      value: 
+      objectReference: {fileID: 32941221}
     - target: {fileID: 6755062693409216557, guid: 4de9f16d552f74b08bade1e2069e4138, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -488,6 +481,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3688220701685791245, guid: 637cac18d82c640aa88cca51a0e9a0f6, type: 3}
+      propertyPath: carPoolScript
+      value: 
+      objectReference: {fileID: 32941221}
     - target: {fileID: 4853106961374999069, guid: 637cac18d82c640aa88cca51a0e9a0f6, type: 3}
       propertyPath: m_Name
       value: OrangeLane
@@ -545,6 +542,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 516162482571324741, guid: 4671c63190d114e4889a7ebfa7f17281, type: 3}
+      propertyPath: carPoolScript
+      value: 
+      objectReference: {fileID: 32941221}
     - target: {fileID: 5629474398768410379, guid: 4671c63190d114e4889a7ebfa7f17281, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -602,6 +603,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 424455962587889053, guid: 838c13928257d48dc95d5c222e3ebdb9, type: 3}
+      propertyPath: carPoolScript
+      value: 
+      objectReference: {fileID: 32941221}
     - target: {fileID: 4209237519052691799, guid: 838c13928257d48dc95d5c222e3ebdb9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -699,6 +704,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3511748385343625523, guid: dfd3f95ecc1204a8098ec85263a2b938, type: 3}
+      propertyPath: carPoolScript
+      value: 
+      objectReference: {fileID: 32941221}
     - target: {fileID: 6701903470068794268, guid: dfd3f95ecc1204a8098ec85263a2b938, type: 3}
       propertyPath: m_Name
       value: BlueLane
@@ -719,5 +728,5 @@ SceneRoots:
   - {fileID: 2186218340159645503}
   - {fileID: 2313003530416120571}
   - {fileID: 4678478891231089328}
-  - {fileID: 694214102}
   - {fileID: 763639420}
+  - {fileID: 32941222}
