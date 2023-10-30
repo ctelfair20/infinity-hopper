@@ -48,7 +48,6 @@ public class LaneScript : MonoBehaviour
         }
     }
 
-    [ContextMenu("moveDown")]
     private void moveDown()
     {
         // grab current position
@@ -61,7 +60,6 @@ public class LaneScript : MonoBehaviour
         popToTheTop();
     }
 
-    [ContextMenu("PopToTheTop")]
     private void popToTheTop()
     {
         // grab current position
@@ -79,19 +77,14 @@ public class LaneScript : MonoBehaviour
 
     private void carSpawerTimer()
     {
-        Debug.Log("timer runing");
         while (timer > spawnRate)
         {
             timer = 0;
-            Debug.Log("timer reset");
             // gain access to grabCarDataFromLaneScript()
             // from carpoolscript, pass in "this"
             carPoolScript.
                 grabCarDataFromLaneScript(gameObject, speed, rotation, offsetPosition);
         }
-        Debug.Log("timer less than 4");
         timer += Time.deltaTime;
-        Debug.Log(timer);
-        //Debug.Break();
     }
 }
