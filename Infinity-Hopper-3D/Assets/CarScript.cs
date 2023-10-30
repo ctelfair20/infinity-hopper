@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class CarScript : MonoBehaviour
 {
-    public float speed = 1;
+    public float speed;
+    public Vector3 offsetPosition;
+    public Vector3 rotation;
 
     // Start is called before the first frame update
     void Start()
     {
-        //speed = Random.Range(1, 3);
+        //transform.eulerAngles = rotation;
+        transform.position = offsetPosition;
     }
 
     // Update is called once per frame
     void Update()
     {
         carMovement();
-        destroyCar();
+        deactivateCar();
     }
 
     private void carMovement()
@@ -26,11 +29,13 @@ public class CarScript : MonoBehaviour
         transform.Translate(Vector3.down * (Time.deltaTime * speed));
     }
 
-    private void destroyCar()
+    private void deactivateCar()
     {
-        if (gameObject != null && transform.position.x  >= 3)
+        if (transform.position.x  >= 3)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            Debug.Log("car is deactivated");
+            //transform.position = new Vector3(-4, 7, 0);
         }
     }
 }

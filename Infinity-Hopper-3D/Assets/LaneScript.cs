@@ -4,30 +4,33 @@ using UnityEngine;
 
 public class LaneScript : MonoBehaviour
 {
+    [SerializeField]
+    float timer = 0;
     int spawnRate;
     int speed;
-    int offsetPosition;
-    float rotation;
-    public CarPoolScript carPoolScript;
+    Vector3 offsetPosition;
+    Vector3 rotation;
+    [SerializeField]
+    CarPoolScript carPoolScript;
 
     // Start is called before the first frame update
     void Start()
     {
-        // get carPoolScript
-        //carPoolScript
         // rate at which cars spawn. Must be higher than speed
         spawnRate = 4;
         speed = 2;
         // either -3 or 3
-        offsetPosition = -3;
+        offsetPosition = new Vector3(-3, transform.position.y, transform.position.z);
         // if offset is negative
-        rotation = -90; // 90 if offset is positive
+        rotation = new Vector3(0, -90, 0); // 90 if offset is positive
+        carPoolScript.grabCarDataFromLaneScript(speed, rotation, offsetPosition);
     }
 
     // Update is called once per frame
     void Update()
     {
         onTapMoveDown();
+        carSpawerTimer();
     }
 
     private void onTapMoveDown()
@@ -71,5 +74,17 @@ public class LaneScript : MonoBehaviour
             // move lane to the top of the screen outside of view
             transform.position = new Vector3(currentPosition.x, newYPosition, currentPosition.z);
         }
+    }
+
+    private void carSpawerTimer()
+    {
+        while(timer < spawnRate)
+        {
+            timer += Time.deltaTime;
+        }
+        timer = 0;
+
+        // gain access to grabCarDataFromLaneScript() from carpoolscript, pass in "this"
+        carPoolScript.grabCarDataFromLaneScript(speed, rotation, offsetPosition);
     }
 }

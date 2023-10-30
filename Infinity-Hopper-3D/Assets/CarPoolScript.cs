@@ -5,13 +5,13 @@ using UnityEngine;
 public class CarPoolScript : MonoBehaviour
 {
     public GameObject carPrefab;
-    public List<GameObject> carPoolList;
+    public List<GameObject> carPoolList = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
     {
         // instantiate 16 cars
-        get16Cars();
+        generate16Cars();
     }
 
     // Update is called once per frame
@@ -20,12 +20,16 @@ public class CarPoolScript : MonoBehaviour
         
     }
 
-    private void get16Cars()
+    private void generate16Cars()
     {
-        for (int i = 0; i <= 15; i++)
+        Debug.Log("get16Cars was called");
+
+        for (int i = 0; i < 16; i++)
         {
+            Debug.Log("get16Car loop");
             GameObject car = createCar();
             car.SetActive(false);
+            Debug.Log(car.activeSelf);
             carPoolList.Add(car);
         }
     }
@@ -34,5 +38,49 @@ public class CarPoolScript : MonoBehaviour
     {
         GameObject car = Instantiate(carPrefab);
         return car;
+    }
+
+    public void grabCarDataFromLaneScript(int laneSpeed, Vector3 laneRotation, Vector3 laneOffsetPosition)
+    {
+        GameObject car = grabInactiveCar();
+
+        if (car)
+        {
+            Debug.Log("car grabed", car);
+            car.GetComponent<CarScript>().speed = laneSpeed;
+            car.GetComponent<CarScript>().rotation = laneRotation;
+            car.GetComponent<CarScript>().offsetPosition = laneOffsetPosition;
+            car.SetActive(true);
+            // I think i should be setting the parent lane here as well
+        }
+        else
+        {
+            Debug.Log("car was null");
+        }
+            
+    }
+
+    private GameObject grabInactiveCar()
+    {
+        Debug.Log(carPoolList.Count);
+        for (int i = 0; i < carPoolList.Count; i++)
+        {
+            Debug.Log(i);
+            GameObject car = carPoolList[i];
+
+            if (i== 6)
+            {
+                Debug.Log(car.activeSelf);
+                return car;
+            }
+
+            if (!car.activeSelf)
+            {
+                Debug.Log("cars retrived");
+                return car;
+            }
+        }
+        Debug.Log("all cars are active");
+        return null;
     }
 }
