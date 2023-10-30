@@ -22,14 +22,10 @@ public class CarPoolScript : MonoBehaviour
 
     private void generate16Cars()
     {
-        //Debug.Log("get16Cars was called");
-
         for (int i = 0; i < 16; i++)
         {
-            //Debug.Log("get16Car loop");
             GameObject car = createCar();
             car.SetActive(false);
-            //Debug.Log(car.activeSelf);
             carPoolList.Add(car);
         }
     }
@@ -54,25 +50,22 @@ public class CarPoolScript : MonoBehaviour
         else
         {
             Debug.Log("car was null");
+            // instatiate new car?
         }
             
     }
 
     private GameObject grabInactiveCar()
     {
-        //Debug.Log(carPoolList.Count);
         for (int i = 0; i < carPoolList.Count; i++)
         {
-            //Debug.Log(i);
             GameObject car = carPoolList[i];
 
             if (!car.activeInHierarchy)
             {
-                //Debug.Log("cars retrived");
                 return car;
             }
         }
-        Debug.Log("all cars are active");
         return null;
     }
 }
