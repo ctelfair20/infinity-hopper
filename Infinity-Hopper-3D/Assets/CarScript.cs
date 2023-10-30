@@ -8,18 +8,25 @@ public class CarScript : MonoBehaviour
     public Vector3 offsetPosition;
     public Vector3 rotation;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //transform.eulerAngles = rotation;
-        transform.position = offsetPosition;
-    }
-
     // Update is called once per frame
     void Update()
     {
         carMovement();
         deactivateCar();
+    }
+
+    public void grabCarDataFromCarPoolScript(
+            int laneSpeed,
+            Vector3 laneRotation,
+            Vector3 laneOffsetPosition)
+    {
+        speed = laneSpeed;
+        rotation = laneRotation;
+        offsetPosition = laneOffsetPosition;
+
+        // set rotation here
+        transform.position = offsetPosition;
+        gameObject.SetActive(true);
     }
 
     private void carMovement()
@@ -34,8 +41,7 @@ public class CarScript : MonoBehaviour
         if (transform.position.x  >= 3)
         {
             gameObject.SetActive(false);
-            Debug.Log("car is deactivated");
-            //transform.position = new Vector3(-4, 7, 0);
+            transform.position = new Vector3(-4, 7, 0);
         }
     }
 }

@@ -604,6 +604,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 424455962587889053, guid: 838c13928257d48dc95d5c222e3ebdb9, type: 3}
+      propertyPath: spawnRate
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 424455962587889053, guid: 838c13928257d48dc95d5c222e3ebdb9, type: 3}
       propertyPath: carPoolScript
       value: 
       objectReference: {fileID: 32941221}

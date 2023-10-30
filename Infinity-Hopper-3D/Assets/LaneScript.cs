@@ -6,6 +6,7 @@ public class LaneScript : MonoBehaviour
 {
     [SerializeField]
     float timer = 0;
+    [SerializeField]
     int spawnRate;
     int speed;
     Vector3 offsetPosition;
@@ -17,13 +18,13 @@ public class LaneScript : MonoBehaviour
     void Start()
     {
         // rate at which cars spawn. Must be higher than speed
-        spawnRate = 4;
+        spawnRate = 2;
         speed = 2;
         // either -3 or 3
         offsetPosition = new Vector3(-3, transform.position.y, transform.position.z);
         // if offset is negative
         rotation = new Vector3(0, -90, 0); // 90 if offset is positive
-        carPoolScript.grabCarDataFromLaneScript(speed, rotation, offsetPosition);
+        carPoolScript.grabCarDataFromLaneScript(gameObject, speed, rotation, offsetPosition);
     }
 
     // Update is called once per frame
@@ -78,13 +79,19 @@ public class LaneScript : MonoBehaviour
 
     private void carSpawerTimer()
     {
-        while(timer < spawnRate)
+        Debug.Log("timer runing");
+        while (timer > spawnRate)
         {
-            timer += Time.deltaTime;
+            timer = 0;
+            Debug.Log("timer reset");
+            // gain access to grabCarDataFromLaneScript()
+            // from carpoolscript, pass in "this"
+            carPoolScript.
+                grabCarDataFromLaneScript(gameObject, speed, rotation, offsetPosition);
         }
-        timer = 0;
-
-        // gain access to grabCarDataFromLaneScript() from carpoolscript, pass in "this"
-        carPoolScript.grabCarDataFromLaneScript(speed, rotation, offsetPosition);
+        Debug.Log("timer less than 4");
+        timer += Time.deltaTime;
+        Debug.Log(timer);
+        //Debug.Break();
     }
 }

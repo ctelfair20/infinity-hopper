@@ -22,14 +22,14 @@ public class CarPoolScript : MonoBehaviour
 
     private void generate16Cars()
     {
-        Debug.Log("get16Cars was called");
+        //Debug.Log("get16Cars was called");
 
         for (int i = 0; i < 16; i++)
         {
-            Debug.Log("get16Car loop");
+            //Debug.Log("get16Car loop");
             GameObject car = createCar();
             car.SetActive(false);
-            Debug.Log(car.activeSelf);
+            //Debug.Log(car.activeSelf);
             carPoolList.Add(car);
         }
     }
@@ -40,18 +40,16 @@ public class CarPoolScript : MonoBehaviour
         return car;
     }
 
-    public void grabCarDataFromLaneScript(int laneSpeed, Vector3 laneRotation, Vector3 laneOffsetPosition)
+    public void grabCarDataFromLaneScript(GameObject lane, int laneSpeed, Vector3 laneRotation, Vector3 laneOffsetPosition)
     {
         GameObject car = grabInactiveCar();
 
-        if (car)
+        if (car)// if inactive car exist
         {
-            Debug.Log("car grabed", car);
-            car.GetComponent<CarScript>().speed = laneSpeed;
-            car.GetComponent<CarScript>().rotation = laneRotation;
-            car.GetComponent<CarScript>().offsetPosition = laneOffsetPosition;
-            car.SetActive(true);
-            // I think i should be setting the parent lane here as well
+            CarScript carScript = car.GetComponent<CarScript>();
+            // set the car's parent as the lane
+            car.transform.parent = lane.transform;
+            carScript.grabCarDataFromCarPoolScript(laneSpeed, laneRotation, laneOffsetPosition);
         }
         else
         {
@@ -62,21 +60,15 @@ public class CarPoolScript : MonoBehaviour
 
     private GameObject grabInactiveCar()
     {
-        Debug.Log(carPoolList.Count);
+        //Debug.Log(carPoolList.Count);
         for (int i = 0; i < carPoolList.Count; i++)
         {
-            Debug.Log(i);
+            //Debug.Log(i);
             GameObject car = carPoolList[i];
 
-            if (i== 6)
+            if (!car.activeInHierarchy)
             {
-                Debug.Log(car.activeSelf);
-                return car;
-            }
-
-            if (!car.activeSelf)
-            {
-                Debug.Log("cars retrived");
+                //Debug.Log("cars retrived");
                 return car;
             }
         }
