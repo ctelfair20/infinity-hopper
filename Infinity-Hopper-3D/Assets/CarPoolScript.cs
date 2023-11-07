@@ -51,6 +51,7 @@ public class CarPoolScript : MonoBehaviour
         }
         else
         {
+            Debug.Break();
             Debug.Log("garbed car was null");
             // instatiate new car?
         }     
