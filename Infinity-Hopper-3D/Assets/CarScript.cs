@@ -8,6 +8,25 @@ public class CarScript : MonoBehaviour
     public Vector3 offsetPosition;
     public Vector3 rotation;
 
+    private void Start()
+    {
+        // set rotation of car based on offsetPosition
+        if (offsetPosition.x < 0)
+        {
+            transform.eulerAngles = new Vector3(
+            transform.eulerAngles.x,
+            transform.eulerAngles.y,
+            transform.eulerAngles.z + 90);
+        }
+        else
+        {
+            transform.eulerAngles = new Vector3(
+            transform.eulerAngles.x,
+            transform.eulerAngles.y,
+            transform.eulerAngles.z - 90);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
