@@ -148,7 +148,10 @@ public class LaneScript : MonoBehaviour
             // call getChild by index on the lane tranform
             Transform child = transform.GetChild(i);
             // set child to inactive
-            child.gameObject.SetActive(false);
+            if (child.tag == "car")
+            {
+                child.gameObject.SetActive(false);
+            }
         }
     }
 }
