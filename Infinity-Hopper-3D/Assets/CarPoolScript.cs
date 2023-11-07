@@ -36,7 +36,7 @@ public class CarPoolScript : MonoBehaviour
         return car;
     }
 
-    public void grabCarDataFromLaneScript(GameObject lane, int laneSpeed, Vector3 laneRotation, Vector3 laneOffsetPosition)
+    public void grabCarDataFromLaneScript(GameObject lane, float laneSpeed, Vector3 laneRotation, Vector3 laneOffsetPosition)
     {
         GameObject car = grabInactiveCar();
 

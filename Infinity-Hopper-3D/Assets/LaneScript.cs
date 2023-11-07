@@ -8,7 +8,7 @@ public class LaneScript : MonoBehaviour
     float timer = 0;
     [SerializeField]
     int spawnRate;
-    int speed;
+    float speed;
     [SerializeField]
     Vector3 offsetPosition;
     Vector3 rotation;
@@ -21,7 +21,7 @@ public class LaneScript : MonoBehaviour
         // rate at which cars spawn. Must be higher than speed
         spawnRate = 2;
         speed = 2;
-        // either -3 or 3
+        // either -0.7 or 0.7
         offsetPosition = new Vector3(-0.7f, transform.position.y, transform.position.z);
         // if offset is negative
         rotation = new Vector3(0, -90, 0); // 90 if offset is positive
@@ -96,5 +96,12 @@ public class LaneScript : MonoBehaviour
         float laneYPosition = currLanePosition.y;
         // give offset the same y val
         offsetPosition.y = laneYPosition;
+
+        //SPEED
+        //get random number between 1 and 8
+        //speed =
+        //SPAWN RATE
+        //if speed is 1-2
+        // set sr to 2-3
     }
 }

@@ -16,7 +16,7 @@ public class CarScript : MonoBehaviour
     }
 
     public void grabCarDataFromCarPoolScript(
-        int laneSpeed,
+        float laneSpeed,
         Vector3 laneRotation,
         Vector3 laneOffsetPosition
     ){
