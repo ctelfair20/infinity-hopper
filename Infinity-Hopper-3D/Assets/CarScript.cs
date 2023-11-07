@@ -16,16 +16,16 @@ public class CarScript : MonoBehaviour
     }
 
     public void grabCarDataFromCarPoolScript(
-            int laneSpeed,
-            Vector3 laneRotation,
-            Vector3 laneOffsetPosition)
-    {
+        int laneSpeed,
+        Vector3 laneRotation,
+        Vector3 laneOffsetPosition
+    ){
         speed = laneSpeed;
         rotation = laneRotation;
         offsetPosition = laneOffsetPosition;
 
         // set rotation here
-        transform.position = offsetPosition;
+        transform.localPosition = new Vector3(offsetPosition.x, 0, 0);
         gameObject.SetActive(true);
     }
 
@@ -41,7 +41,7 @@ public class CarScript : MonoBehaviour
         if (transform.position.x  >= 3)
         {
             gameObject.SetActive(false);
-            transform.position = new Vector3(-4, 7, 0);
+            transform.parent = null;
         }
     }
 }

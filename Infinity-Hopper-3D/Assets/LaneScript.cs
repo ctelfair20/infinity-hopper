@@ -9,6 +9,7 @@ public class LaneScript : MonoBehaviour
     [SerializeField]
     int spawnRate;
     int speed;
+    [SerializeField]
     Vector3 offsetPosition;
     Vector3 rotation;
     [SerializeField]
@@ -21,7 +22,7 @@ public class LaneScript : MonoBehaviour
         spawnRate = 2;
         speed = 2;
         // either -3 or 3
-        offsetPosition = new Vector3(-3, transform.position.y, transform.position.z);
+        offsetPosition = new Vector3(-0.7f, transform.position.y, transform.position.z);
         // if offset is negative
         rotation = new Vector3(0, -90, 0); // 90 if offset is positive
         carPoolScript.grabCarDataFromLaneScript(gameObject, speed, rotation, offsetPosition);
@@ -56,6 +57,7 @@ public class LaneScript : MonoBehaviour
         float newYPosition = currentPosition.y - 2;
         // reposition lane to new y axis value
         transform.position = new Vector3(currentPosition.x, newYPosition, currentPosition.z);
+
         // move lane to top if necessary
         popToTheTop();
     }
@@ -72,6 +74,7 @@ public class LaneScript : MonoBehaviour
         {
             // move lane to the top of the screen outside of view
             transform.position = new Vector3(currentPosition.x, newYPosition, currentPosition.z);
+            updateOffsetPosition(transform.position);
         }
     }
 
@@ -86,5 +89,12 @@ public class LaneScript : MonoBehaviour
                 grabCarDataFromLaneScript(gameObject, speed, rotation, offsetPosition);
         }
         timer += Time.deltaTime;
+    }
+
+    private void updateOffsetPosition (Vector3 currLanePosition) {
+        // grab lanes current y position
+        float laneYPosition = currLanePosition.y;
+        // give offset the same y val
+        offsetPosition.y = laneYPosition;
     }
 }
