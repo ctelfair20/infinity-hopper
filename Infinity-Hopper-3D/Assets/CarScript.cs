@@ -8,24 +8,21 @@ public class CarScript : MonoBehaviour
     public Vector3 offsetPosition;
     public Vector3 rotation;
 
-    private void Start()
-    {
-        // set rotation of car based on offsetPosition
-        if (offsetPosition.x < 0)
-        {
-            transform.eulerAngles = new Vector3(
-            transform.eulerAngles.x,
-            transform.eulerAngles.y,
-            transform.eulerAngles.z + 90);
-        }
-        else
-        {
-            transform.eulerAngles = new Vector3(
-            transform.eulerAngles.x,
-            transform.eulerAngles.y,
-            transform.eulerAngles.z - 90);
-        }
-    }
+    //private void OnDisable()
+    //{
+    //    Debug.Log("testD: carscript is disabled");
+    //}
+
+    //private void OnEnable()
+    //{
+    //    Debug.Log("testE: carscript is enabled");
+    //}
+
+    //private void Start()
+    //{
+    //    Debug.Log("testS: carscript has started");
+        
+    //}
 
     // Update is called once per frame
     void Update()
@@ -43,9 +40,12 @@ public class CarScript : MonoBehaviour
         rotation = laneRotation;
         offsetPosition = laneOffsetPosition;
 
-        // set rotation here
+        // set position of car
         transform.localPosition = new Vector3(offsetPosition.x, 0, 0);
+        setRotation();
+        //Debug.Log($"rotation, offsetX :{transform.eulerAngles.z}, {offsetPosition.x}", gameObject);
         gameObject.SetActive(true);
+        //Debug.Break();
     }
 
     private void carMovement()
@@ -57,10 +57,32 @@ public class CarScript : MonoBehaviour
 
     private void deactivateCar()
     {
-        if (transform.position.x  >= 3)
+        if (transform.position.x >= 3 && transform.eulerAngles.z == 90)
         {
             gameObject.SetActive(false);
             transform.parent = null;
+        }
+        else if (transform.position.x <= -3 && transform.eulerAngles.z == 270)
+        {
+            gameObject.SetActive(false);
+            transform.parent = null;
+        }
+    }
+
+    private void setRotation()
+    {
+        // set rotation of car based on offsetPosition
+        if (offsetPosition.x < 0)
+        {
+            //Debug.Log($"90 offsetPosition.x : {offsetPosition.x}", gameObject);
+            transform.eulerAngles = rotation;
+        }
+        else
+        {
+            //Debug.Log($"270 offsetPosition.x : {offsetPosition.x}", gameObject);
+            Debug.Log($"1 transform.eulerAngles.z : {transform.eulerAngles.z}", gameObject);
+            transform.eulerAngles = rotation;
+            Debug.Log($"2 transform.eulerAngles.z : {transform.eulerAngles.z}", gameObject);
         }
     }
 }

@@ -45,14 +45,10 @@ public class CarPoolScript : MonoBehaviour
             CarScript carScript = car.GetComponent<CarScript>();
             // set the car's parent as the lane
             car.transform.parent = lane.transform;
-            //Debug.Log(carScript.offsetPosition, car);
-            //Debug.Break();
             carScript.grabCarDataFromCarPoolScript(laneSpeed, laneRotation, laneOffsetPosition);
         }
         else
         {
-            Debug.Break();
-            Debug.Log("garbed car was null");
             // instatiate new car?
         }     
     }

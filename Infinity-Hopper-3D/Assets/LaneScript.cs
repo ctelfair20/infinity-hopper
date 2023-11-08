@@ -23,8 +23,8 @@ public class LaneScript : MonoBehaviour
     void Start()
     {
         // either -0.7 or 0.7
-        offsetPosition = new Vector3(
-            -0.7f, transform.position.y, transform.position.z);
+        //offsetPosition = new Vector3(
+        //    -0.7f, transform.position.y, transform.position.z);
         // if offset is negative
         rotation = new Vector3(0, -90, 0); // 90 if offset is positive
 
@@ -114,11 +114,19 @@ public class LaneScript : MonoBehaviour
         // deactivates all cars on the lane before poping to the top
         turnOffOldCars();
 
-        //OFFSETPOSITION
-        // grab lanes current y position
-        float laneYPosition = currLanePosition.y;
-        // give offset the same y val
-        offsetPosition.y = laneYPosition;
+        //OFFSETPOSITION AND ROTATION
+        int leftOrRight = Random.Range(1, 3);
+
+        if (leftOrRight == 1)
+        {
+            offsetPosition = new Vector3(-3, transform.position.y, transform.position.z);
+            rotation = new Vector3(0, 0, 90);
+        }
+        else if (leftOrRight == 2)
+        {
+            offsetPosition = new Vector3(3, transform.position.y, transform.position.z);
+            rotation = new Vector3(0, 0, 270);
+        }
 
         //SPEED
         //get random number between 1 and 8
@@ -133,10 +141,7 @@ public class LaneScript : MonoBehaviour
         {
             spawnRate = Random.Range(4, 5);
         }
-        Debug.Log($"speed became : {speed}", gameObject);
-
-        //ROTATION
-        
+        //Debug.Log($"speed became : {speed}", gameObject);
     }
 
     private void turnOffOldCars()
