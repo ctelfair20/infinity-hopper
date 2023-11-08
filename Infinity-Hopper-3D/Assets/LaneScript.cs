@@ -103,7 +103,6 @@ public class LaneScript : MonoBehaviour
         // should be randomly true or false
         canGetCar = true;
 
-        //TODO:deactivates all cars on the lane before poping to the
         turnOffOldCars();
 
         //OFFSETPOSITION AND ROTATION
@@ -136,7 +135,6 @@ public class LaneScript : MonoBehaviour
         //Debug.Log($"speed became : {speed}", gameObject);
     }
 
-    //TODO - not working
     private void turnOffOldCars()
     {
         // onLanePop set all child cars to inactive
