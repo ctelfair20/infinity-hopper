@@ -22,12 +22,6 @@ public class LaneScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // either -0.7 or 0.7
-        //offsetPosition = new Vector3(
-        //    -0.7f, transform.position.y, transform.position.z);
-        // if offset is negative
-        rotation = new Vector3(0, -90, 0); // 90 if offset is positive
-
         if (transform.position == new Vector3(0, -2, 0))
         {
             canGetCar = false;
@@ -98,8 +92,6 @@ public class LaneScript : MonoBehaviour
         while (timer > spawnRate)
         {
             timer = 0;
-            // gain access to grabCarDataFromLaneScript()
-            // from carpoolscript, pass in "this"
             carPoolScript.
                 grabCarDataFromLaneScript(gameObject, speed, rotation, offsetPosition);
         }
@@ -111,7 +103,7 @@ public class LaneScript : MonoBehaviour
         // should be randomly true or false
         canGetCar = true;
 
-        // deactivates all cars on the lane before poping to the top
+        //TODO:deactivates all cars on the lane before poping to the
         turnOffOldCars();
 
         //OFFSETPOSITION AND ROTATION
@@ -144,6 +136,7 @@ public class LaneScript : MonoBehaviour
         //Debug.Log($"speed became : {speed}", gameObject);
     }
 
+    //TODO - not working
     private void turnOffOldCars()
     {
         // onLanePop set all child cars to inactive

@@ -14,12 +14,6 @@ public class CarPoolScript : MonoBehaviour
         generate16Cars();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void generate16Cars()
     {
         for (int i = 0; i < 16; i++)
@@ -50,6 +44,7 @@ public class CarPoolScript : MonoBehaviour
         else
         {
             // instatiate new car?
+            Debug.Log("no more inactive cars available");
         }     
     }
 
