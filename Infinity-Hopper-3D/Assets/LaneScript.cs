@@ -76,7 +76,7 @@ public class LaneScript : MonoBehaviour
         // grab current position
         Vector3 currentPosition = transform.position;
         // set current y axis to 6 (above all other lanes out of screen view)
-        float newYPosition = 8;
+        float newYPosition = 16;
 
         // if lane is out of screen view,
         if (currentPosition.y <= -4)
