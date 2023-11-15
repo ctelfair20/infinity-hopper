@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,33 +12,30 @@ public class UIControllerScript : MonoBehaviour
     public GameObject highScoreListScreen;
     public GameObject activeGameUIScreen;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        // turn on homescreen
-        toggleScreen(homeScreen);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // subscript a local function to an action on the EventManagerScript
+        EventManagerScript.current.onGameLoad += turnOnHomescreen;
+        // depatch action
     }
 
     //Toggle Functions
-    public void turnOffHomescreen()
+    public void turnOnHomescreen()
     {
-        // deactivate home
+        //activate home
         toggleScreen(homeScreen);
-        // activate the active game ui
-        toggleScreen(activeGameUIScreen);
+        //// activate the active game ui
+        //toggleScreen(activeGameUIScreen);
     }
 
-    public void onFrogDeath()
+
+    public void startNewGame()
     {
-        // activate gameover screen
+        // deactivate game over screen
         toggleScreen(gameOverScreen);
+        // 
     }
+
     public void toggleScreen(GameObject screen)
     {
         if (screen.activeInHierarchy)
