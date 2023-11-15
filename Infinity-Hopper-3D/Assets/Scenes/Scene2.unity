@@ -1518,6 +1518,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Frog
       objectReference: {fileID: 0}
+    - target: {fileID: 5820319499014438641, guid: e5ef313b212ff49c19fda9f4e20aed7b, type: 3}
+      propertyPath: m_Size.x
+      value: 1.0152287
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820319499014438641, guid: e5ef313b212ff49c19fda9f4e20aed7b, type: 3}
+      propertyPath: m_Size.y
+      value: 1.0152287
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820319499014438641, guid: e5ef313b212ff49c19fda9f4e20aed7b, type: 3}
+      propertyPath: m_Size.z
+      value: 1.0152287
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820319499014438641, guid: e5ef313b212ff49c19fda9f4e20aed7b, type: 3}
+      propertyPath: m_Center.y
+      value: -0.007614374
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820319499014438641, guid: e5ef313b212ff49c19fda9f4e20aed7b, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7338174600234987787, guid: e5ef313b212ff49c19fda9f4e20aed7b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
