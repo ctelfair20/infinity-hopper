@@ -17,6 +17,7 @@ public class EventManagerScript : MonoBehaviour
 
     private void Start()
     {
+        // depatch action
         EventManagerScript.current.gameLoad();
     }
 

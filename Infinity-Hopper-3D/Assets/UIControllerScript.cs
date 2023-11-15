@@ -16,7 +16,6 @@ public class UIControllerScript : MonoBehaviour
     {
         // subscript a local function to an action on the EventManagerScript
         EventManagerScript.current.onGameLoad += turnOnHomescreen;
-        // depatch action
     }
 
     //Toggle Functions
@@ -24,8 +23,14 @@ public class UIControllerScript : MonoBehaviour
     {
         //activate home
         toggleScreen(homeScreen);
-        //// activate the active game ui
-        //toggleScreen(activeGameUIScreen);
+    }
+
+    public void turnOffHomescreen()
+    {
+        //deactivate home
+        toggleScreen(homeScreen);
+        // activate the active game ui
+        toggleScreen(activeGameUIScreen);
     }
 
 
