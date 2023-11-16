@@ -32,9 +32,9 @@ public class CarScript : MonoBehaviour
 
     private void carMovement()
     {
-        // move car to the left smoothly
-        // car prefab as been rotated 90 degrees so Vector3.down moves the car to the right
-        transform.Translate(Vector3.down * (Time.deltaTime * speed));
+        // move car to the left or right smoothly
+        Vector3 target = new Vector3(offsetPosition.x * -1, transform.position.y, offsetPosition.z);
+        transform.position = Vector3.MoveTowards(transform.position, target, Time.deltaTime*speed);
     }
 
     private void deactivateCar()
@@ -49,5 +49,11 @@ public class CarScript : MonoBehaviour
             gameObject.SetActive(false);
             transform.parent = null;
         }
+    }
+
+    //TODO: do we still need this?
+    public void UpdateOffset(Vector3 pos)
+    {
+        offsetPosition = pos;
     }
 }

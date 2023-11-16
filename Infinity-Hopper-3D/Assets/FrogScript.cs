@@ -40,8 +40,9 @@ public class FrogScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        //todo: this func is not running
-        Debug.Log(collision);
-        EventManagerScript.current.frogDeath();
+        if (collision.gameObject.name == "Car(Clone)")
+        {
+            EventManagerScript.current.frogDeath();
+        }
     }
 }
