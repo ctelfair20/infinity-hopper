@@ -20,6 +20,13 @@ public class UIControllerScript : MonoBehaviour
         EventManagerScript.current.onDoubleClick += turnOnPauseScreen;
     }
 
+    // Button Functions
+    public void startNewGame()
+    {
+        // deactivate game over screen
+        toggleScreen(gameOverScreen);
+    }
+
     //Toggle Functions
     public void turnOnHomescreen()
     {
@@ -41,12 +48,6 @@ public class UIControllerScript : MonoBehaviour
         toggleScreen(activeGameUIScreen);
     }
 
-    public void startNewGame()
-    {
-        // deactivate game over screen
-        toggleScreen(gameOverScreen);
-        // 
-    }
 
     public void turnOnPauseScreen()
     {
