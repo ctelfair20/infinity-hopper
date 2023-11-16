@@ -3,9 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Device;
+using UnityEngine.SceneManagement;
 
 public class UIControllerScript : MonoBehaviour
 {
+    
     public GameObject pauseScreen;
     public GameObject homeScreen;
     public GameObject gameOverScreen;
@@ -25,6 +27,15 @@ public class UIControllerScript : MonoBehaviour
     {
         // deactivate game over screen
         toggleScreen(gameOverScreen);
+    }
+
+    public void quitGame()
+    {
+        // deactivate pause over screen
+        toggleScreen(pauseScreen);
+        // reload scene
+        Scene activeScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(activeScene.name);
     }
 
     //Toggle Functions
