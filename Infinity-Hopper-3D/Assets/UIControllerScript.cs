@@ -17,6 +17,7 @@ public class UIControllerScript : MonoBehaviour
         // subscript a local function to an action on the EventManagerScript
         EventManagerScript.current.onGameLoad += turnOnHomescreen;
         EventManagerScript.current.onFrogDeath += turnOnGameOverScreen;
+        EventManagerScript.current.onDoubleClick += turnOnPauseScreen;
     }
 
     //Toggle Functions
@@ -37,6 +38,7 @@ public class UIControllerScript : MonoBehaviour
     public void turnOnGameOverScreen()
     {
         toggleScreen(gameOverScreen);
+        toggleScreen(activeGameUIScreen);
     }
 
     public void startNewGame()
@@ -44,6 +46,11 @@ public class UIControllerScript : MonoBehaviour
         // deactivate game over screen
         toggleScreen(gameOverScreen);
         // 
+    }
+
+    public void turnOnPauseScreen()
+    {
+        toggleScreen(pauseScreen);
     }
 
     public void toggleScreen(GameObject screen)

@@ -49,4 +49,15 @@ public class EventManagerScript : MonoBehaviour
             onFrogDeath();
         }
     }
+
+    // create an action
+    public event Action onDoubleClick;
+    // create invoking function
+    public void doubleClick()
+    {
+        if (onDoubleClick != null)
+        {
+            onDoubleClick();
+        }
+    }
 }

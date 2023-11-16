@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class FrogScript : MonoBehaviour
 {
+    int clicked = -1;
+
     // Update is called once per frame
     void Update()
     {
         frogMovement();
+        checkForDoubleClick();
     }
 
     private void frogMovement()
@@ -36,6 +39,22 @@ public class FrogScript : MonoBehaviour
     {
         if (transform.position.x > -1)
             transform.position = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
+    }
+
+    //TODO: need to update to touch controls
+    private void checkForDoubleClick()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            clicked++;
+            Debug.Log("there was a mouse click" + clicked);
+            if (clicked == 2)
+            {
+                Debug.Log("there was a DOUBLE click" + clicked);
+                EventManagerScript.current.doubleClick();
+                clicked = -1;
+            }
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
