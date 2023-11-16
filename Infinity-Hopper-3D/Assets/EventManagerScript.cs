@@ -27,7 +27,6 @@ public class EventManagerScript : MonoBehaviour
     // create a function to invoke the action
     public void gameLoad()
     {
-        //TODO: some how my action has a NO value
         if (onGameLoad != null)
         {
             onGameLoad();
@@ -42,11 +41,11 @@ public class EventManagerScript : MonoBehaviour
     // create invoking function
     public void frogDeath()
     {
-        Debug.Log("did you work??");
-        Debug.Log(onGameLoad);
+        //Debug.Log("did you work??");
+        //Debug.Log(onGameLoad);
         if (onFrogDeath != null)
         {
-            Debug.Log("if did you work??");
+            //Debug.Log("if did you work??");
             onFrogDeath();
         }
     }
