@@ -15,7 +15,8 @@ public class PlayerInventoryScript : MonoBehaviour
 
     public void updateHighScoreList()
     {
-        // add current score and distane
+        // activate onHighScoreUpdate action
+        EventManagerScript.current.highScoreUpdate();
     }
 
     public void updateActiveScoreAndDistance()

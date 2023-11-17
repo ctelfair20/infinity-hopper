@@ -20,6 +20,7 @@ public class UIControllerScript : MonoBehaviour
         EventManagerScript.current.onGameLoad += turnOnHomescreen;
         EventManagerScript.current.onFrogDeath += turnOnGameOverScreen;
         EventManagerScript.current.onDoubleClick += turnOnPauseScreen;
+        EventManagerScript.current.onHighScoreUpdate += updateHighScoreDisplay;
     }
 
     // Button Functions
