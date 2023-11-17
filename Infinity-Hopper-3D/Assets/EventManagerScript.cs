@@ -60,4 +60,14 @@ public class EventManagerScript : MonoBehaviour
             onDoubleClick();
         }
     }
+
+    public event Action onHighScoreUpdate;
+
+    public void highScoreUpdate()
+    {
+        if(onHighScoreUpdate != null)
+        {
+            onHighScoreUpdate();
+        }
+    }
 }

@@ -38,6 +38,11 @@ public class UIControllerScript : MonoBehaviour
         SceneManager.LoadScene(activeScene.name);
     }
 
+    public void updateHighScoreDisplay()
+    {
+        // add current score and distance to highscore list
+    }
+
     //Toggle Functions
     public void turnOnHomescreen()
     {
