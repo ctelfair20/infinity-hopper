@@ -41,11 +41,11 @@ public class EventManagerScript : MonoBehaviour
     // create invoking function
     public void frogDeath()
     {
-        //Debug.Log("did you work??");
+        Debug.Log("frogDeath was called");
         //Debug.Log(onGameLoad);
         if (onFrogDeath != null)
         {
-            //Debug.Log("if did you work??");
+            Debug.Log("onfrogDeath was called");
             onFrogDeath();
         }
     }
