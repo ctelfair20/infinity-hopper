@@ -6,7 +6,7 @@ public class PlayerInventoryScript : MonoBehaviour
 {
     public int score = 0;
     public int distance = 0;
-    public List<int> highScoreList = new List<int>();
+    public List<int[]> highScoreList = new List<int[]>();
 
     private void Start()
     {
@@ -15,6 +15,9 @@ public class PlayerInventoryScript : MonoBehaviour
 
     public void updateHighScoreList()
     {
+        // add current score and distane to highScoreList
+        int[] row = { score, distance };
+        highScoreList.Add(row);
         // activate onHighScoreUpdate action
         EventManagerScript.current.highScoreUpdate();
     }
