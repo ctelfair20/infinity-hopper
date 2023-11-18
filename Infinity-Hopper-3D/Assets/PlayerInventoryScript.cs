@@ -11,6 +11,7 @@ public class PlayerInventoryScript : MonoBehaviour
     private void Start()
     {
         EventManagerScript.current.onFrogDeath += updateHighScoreList;
+        EventManagerScript.current.onLaneMovement += updateActiveScoreAndDistance;
     }
 
     public void updateHighScoreList()
@@ -29,6 +30,7 @@ public class PlayerInventoryScript : MonoBehaviour
     public void updateActiveScoreAndDistance()
     {
         // increase score and distance by 1 when lane moves down
+        //Debug.Log("score and distance increased!");
     }
 }
 

@@ -4,20 +4,15 @@ using UnityEngine;
 
 public class LaneScript : MonoBehaviour
 {
-    [SerializeField]
-    float timer = 0;
+    [SerializeField] float timer = 0;
     // rate at which cars spawn. Must be higher than speed
-    [SerializeField]
-    float spawnRate;
-    [SerializeField]
-    float speed;
-    [SerializeField]
-    Vector3 offsetPosition;
+    [SerializeField] float spawnRate;
+    [SerializeField] float speed;
+    [SerializeField] Vector3 offsetPosition;
     Vector3 rotation;
-    [SerializeField]
-    CarPoolScript carPoolScript;
-    [SerializeField]
-    bool canGetCar = true;
+    [SerializeField] CarPoolScript carPoolScript;
+    [SerializeField] bool canGetCar = true;
+    [SerializeField] bool hasPressedUpArrow = false;
 
     // Start is called before the first frame update
     void Start()
@@ -53,8 +48,23 @@ public class LaneScript : MonoBehaviour
         // check of up arrow press
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            // call moveDown
-            moveDown();
+            if (!hasPressedUpArrow)
+            {
+                //Debug.Log("once!!");
+                int frameIndex = Time.frameCount;
+                Debug.Log("Frame Index: " + frameIndex);
+                // Dispatch action
+                EventManagerScript.current.laneMovement();
+                hasPressedUpArrow = true;
+
+                // call moveDown
+                moveDown();
+            }
+        }
+        else if(Input.GetKeyUp(KeyCode.UpArrow))
+        {
+            // Reset the flag when the key is released
+            hasPressedUpArrow = false;
         }
     }
 

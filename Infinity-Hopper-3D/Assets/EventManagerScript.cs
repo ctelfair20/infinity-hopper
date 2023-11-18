@@ -70,4 +70,14 @@ public class EventManagerScript : MonoBehaviour
             onHighScoreUpdate(highScoreList);
         }
     }
+
+    public event Action onLaneMovement;
+
+    public void laneMovement()
+    {
+        if (onLaneMovement != null)
+        {
+            onLaneMovement();
+        }
+    }
 }

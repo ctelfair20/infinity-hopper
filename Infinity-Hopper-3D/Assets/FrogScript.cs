@@ -47,10 +47,10 @@ public class FrogScript : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             clicked++;
-            Debug.Log("there was a mouse click" + clicked);
+            //Debug.Log("there was a mouse click" + clicked);
             if (clicked == 2)
             {
-                Debug.Log("there was a DOUBLE click" + clicked);
+                //Debug.Log("there was a DOUBLE click" + clicked);
                 EventManagerScript.current.doubleClick();
                 clicked = -1;
             }
