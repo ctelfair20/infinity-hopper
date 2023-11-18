@@ -57,6 +57,7 @@ public class FrogScript : MonoBehaviour
         }
     }
 
+    //TODO: if frog is hit multiple times, the gameover screen will toggle off and on
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.name == "Car(Clone)")

@@ -6,7 +6,7 @@ public class PlayerInventoryScript : MonoBehaviour
 {
     public int score = 0;
     public int distance = 0;
-    public List<int[]> highScoreList = new List<int[]>();
+    public List<ScoreDistance> highScoreList = new List<ScoreDistance>();
 
     private void Start()
     {
@@ -16,14 +16,34 @@ public class PlayerInventoryScript : MonoBehaviour
     public void updateHighScoreList()
     {
         // add current score and distane to highScoreList
-        int[] row = { score, distance };
-        highScoreList.Add(row);
+        AddScoreDistance(score, distance);
         // activate onHighScoreUpdate action
-        EventManagerScript.current.highScoreUpdate();
+        EventManagerScript.current.highScoreUpdate(highScoreList);
+    }
+
+    void AddScoreDistance(int score, int distance)
+    {
+        highScoreList.Add(new ScoreDistance(score, distance));
     }
 
     public void updateActiveScoreAndDistance()
     {
         // increase score and distance by 1 when lane moves down
+    }
+}
+
+// Custom class for score and distance
+// We want to add a new ScoreDistance object
+// to our highscore list at the end of every game
+public class ScoreDistance
+{
+    public int Score { get; set; }// this allows for easier reading and writting of the score property
+    public int Distance { get; set; }// this allows for easier reading and writting of the distance property
+
+    // This is a constructor function for the class ScoreDistance
+    public ScoreDistance(int score, int distance)
+    {
+        Score = score;
+        Distance = distance;
     }
 }

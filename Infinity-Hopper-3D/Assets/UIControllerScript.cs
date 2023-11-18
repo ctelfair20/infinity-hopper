@@ -39,21 +39,38 @@ public class UIControllerScript : MonoBehaviour
         SceneManager.LoadScene(activeScene.name);
     }
 
-    public void updateHighScoreDisplay()
+    //TODO: if frog is hit twice, then this func will run twice 
+    public void updateHighScoreDisplay(List<ScoreDistance> highScoreList)
     {
         // add current score and distance to highscore list
+        Debug.Log(highScoreList[0].Score);
+        // sort highScoreList from highest score to lowest score
+        SortHighScoreList(highScoreList);
+        // sort highScoreList from highest distance to lowest distance
+    }
+    
+    //TODO: Continue working on this algorithm 
+    void SortHighScoreList(List<ScoreDistance> highScoreList)
+    {
+        Debug.Log("Score Distance List:");
+
+        for (int i = 0; i < highScoreList.Count; i++)
+        {
+            ScoreDistance scoreDistance = highScoreList[i];
+            Debug.Log("Score: " + scoreDistance.Score + ", Distance: " + scoreDistance.Distance);
+        }
     }
 
     //Toggle Functions
     public void turnOnHomescreen()
     {
-        //activate home
+        // activate home
         toggleScreen(homeScreen);
     }
 
     public void turnOffHomescreen()
     {
-        //deactivate home
+        // deactivate home
         toggleScreen(homeScreen);
         // activate the active game ui
         toggleScreen(activeGameUIScreen);

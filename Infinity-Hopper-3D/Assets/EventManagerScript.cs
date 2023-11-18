@@ -61,13 +61,13 @@ public class EventManagerScript : MonoBehaviour
         }
     }
 
-    public event Action onHighScoreUpdate;
+    public event Action<List<ScoreDistance>> onHighScoreUpdate;
 
-    public void highScoreUpdate()
+    public void highScoreUpdate(List<ScoreDistance> highScoreList)
     {
         if(onHighScoreUpdate != null)
         {
-            onHighScoreUpdate();
+            onHighScoreUpdate(highScoreList);
         }
     }
 }
