@@ -80,4 +80,14 @@ public class EventManagerScript : MonoBehaviour
             onLaneMovement();
         }
     }
+
+    public event Action<int, int> onActiveScoreUpdate;
+
+    public void activeScoreUpdate(int score, int distance)
+    {
+        if (onActiveScoreUpdate != null)
+        {
+            onActiveScoreUpdate(score, distance);
+        }
+    }
 }

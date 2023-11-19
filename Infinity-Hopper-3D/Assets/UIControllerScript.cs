@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Device;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIControllerScript : MonoBehaviour
 {
@@ -11,8 +12,12 @@ public class UIControllerScript : MonoBehaviour
     public GameObject pauseScreen;
     public GameObject homeScreen;
     public GameObject gameOverScreen;
+    public Text gameOverScore;
+    public Text gameOverDistance;
     public GameObject highScoreListScreen;
     public GameObject activeGameUIScreen;
+    public Text activeUIScore;
+    public Text activeUIDistance;
 
     private void Start()
     {
@@ -21,6 +26,7 @@ public class UIControllerScript : MonoBehaviour
         EventManagerScript.current.onFrogDeath += turnOnGameOverScreen;
         EventManagerScript.current.onDoubleClick += turnOnPauseScreen;
         EventManagerScript.current.onHighScoreUpdate += updateHighScoreDisplay;
+        EventManagerScript.current.onActiveScoreUpdate += updateActiveScoreDisplay;
     }
 
     // Button Functions
@@ -50,7 +56,7 @@ public class UIControllerScript : MonoBehaviour
     }
     
     //TODO: Continue working on this algorithm 
-    void SortHighScoreList(List<ScoreDistance> highScoreList)
+    public void SortHighScoreList(List<ScoreDistance> highScoreList)
     {
         Debug.Log("Score Distance List:");
 
@@ -59,6 +65,17 @@ public class UIControllerScript : MonoBehaviour
             ScoreDistance scoreDistance = highScoreList[i];
             Debug.Log("Score: " + scoreDistance.Score + ", Distance: " + scoreDistance.Distance);
         }
+    }
+
+    public void updateActiveScoreDisplay(int score, int distance)
+    {
+        //TODO: handle issue with the ten lanes all updating the score and distance
+        // update the game over score and distance
+        gameOverScore.text = "Score: " + score.ToString();
+        gameOverDistance.text = "Distance: " + distance.ToString();
+        // update the active ui score and distance
+        activeUIScore.text = "Score: " + score.ToString();
+        activeUIDistance.text = "Distance: " + distance.ToString();
     }
 
     //Toggle Functions

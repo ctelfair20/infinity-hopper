@@ -30,8 +30,13 @@ public class PlayerInventoryScript : MonoBehaviour
     public void updateActiveScoreAndDistance()
     {
         // increase score and distance by 1 when lane moves down
+        score++;
+        distance++;
         //Debug.Log("score and distance increased!");
+        EventManagerScript.current.activeScoreUpdate(score, distance);
     }
+
+
 }
 
 // Custom class for score and distance
