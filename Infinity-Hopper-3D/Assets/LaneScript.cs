@@ -81,6 +81,7 @@ public class LaneScript : MonoBehaviour
             // move lane to the top of the screen outside of view
             transform.position = new Vector3(currentPosition.x, newYPosition, currentPosition.z);
             updateLaneVariablesOnPop(transform.position);
+            turnOffOldCars();
         }
     }
 
@@ -97,10 +98,8 @@ public class LaneScript : MonoBehaviour
 
     private void updateLaneVariablesOnPop(Vector3 currLanePosition)
     {
-        // should be randomly true or false
+        // should be randomly true or false to create some lanes with no cars
         canGetCar = true;
-
-        turnOffOldCars();
 
         //OFFSETPOSITION AND ROTATION
         int leftOrRight = Random.Range(1, 3);
