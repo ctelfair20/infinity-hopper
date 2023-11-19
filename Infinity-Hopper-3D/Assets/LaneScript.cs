@@ -12,7 +12,6 @@ public class LaneScript : MonoBehaviour
     Vector3 rotation;
     [SerializeField] CarPoolScript carPoolScript;
     [SerializeField] bool canGetCar = true;
-    [SerializeField] bool hasPressedUpArrow = false;
 
     // Start is called before the first frame update
     void Start()
@@ -48,23 +47,11 @@ public class LaneScript : MonoBehaviour
         // check of up arrow press
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            if (!hasPressedUpArrow)
-            {
-                //Debug.Log("once!!");
-                int frameIndex = Time.frameCount;
-                Debug.Log("Frame Index: " + frameIndex);
-                // Dispatch action
-                EventManagerScript.current.laneMovement();
-                hasPressedUpArrow = true;
+            // Dispatch action
+            EventManagerScript.current.laneMovement();
 
-                // call moveDown
-                moveDown();
-            }
-        }
-        else if(Input.GetKeyUp(KeyCode.UpArrow))
-        {
-            // Reset the flag when the key is released
-            hasPressedUpArrow = false;
+            // call moveDown
+            moveDown();
         }
     }
 
