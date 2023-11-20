@@ -25,7 +25,7 @@ public class LaneScript : MonoBehaviour
         else
         {
             // any other lane should get new cars and new car values
-            updateLaneVariablesOnPop(transform.position);
+            updateLaneVariablesOnPop();
             carPoolScript.grabCarDataFromLaneScript(
                 gameObject, speed, rotation, offsetPosition);
         }
@@ -84,7 +84,7 @@ public class LaneScript : MonoBehaviour
         {
             // move lane to the top of the screen outside of view
             transform.position = new Vector3(currentPosition.x, newYPosition, currentPosition.z);
-            updateLaneVariablesOnPop(transform.position);
+            updateLaneVariablesOnPop();
             turnOffOldCars();
         }
     }
@@ -100,7 +100,7 @@ public class LaneScript : MonoBehaviour
         timer += Time.deltaTime;
     }
 
-    private void updateLaneVariablesOnPop(Vector3 currLanePosition)
+    private void updateLaneVariablesOnPop()
     {
         // should be randomly true or false to create some lanes with no cars
         canGetCar = true;
