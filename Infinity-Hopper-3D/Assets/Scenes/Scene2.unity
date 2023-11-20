@@ -3967,6 +3967,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lane: {fileID: 1045751184}
   laneList: []
+  laneMaterialNames:
+  - BlueRoad
+  - YellowRoad
+  - MagentaRoad
+  - DarkPurpleRoad
+  - GreenRoad
+  - DarkBlueRoad
+  - OrangeRoad
+  - PurpleRoad
+  - BrownRoad
+  - CarMaterial
+  laneMaterialsList: []
 --- !u!4 &2054086927
 Transform:
   m_ObjectHideFlags: 0

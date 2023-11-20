@@ -6,10 +6,25 @@ public class LaneControllerScript : MonoBehaviour
 {
     [SerializeField] public GameObject lane;
     public List<GameObject> laneList = new List<GameObject>();
+    public List<string> laneMaterialNames = new List<string>
+    {
+        "BlueRoad",
+        "YellowRoad",
+        "MagentaRoad",
+        "DarkPurpleRoad",
+        "GreenRoad",
+        "DarkBlueRoad",
+        "OrangeRoad",
+        "PurpleRoad",
+        "BrownRoad",
+        "CarMaterial",
+    };
+    public List<Material> laneMaterialsList = new List<Material>();
 
     // Start is called before the first frame update
     void Start()
     {
+        generateListOfMaterials();
         generate10Lanes();
     }
 
@@ -19,14 +34,34 @@ public class LaneControllerScript : MonoBehaviour
         onTapMoveDown();
     }
 
+    public void generateListOfMaterials()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            laneMaterialsList.Add(Resources.Load<Material>("Materials/" + laneMaterialNames[i]));
+        }
+    }
+
     public void generate10Lanes()
     {
         int yPositionForLane = -2;
 
-        for(int i = 0; i < 11; i++)
+        for (int i = 0; i < 10; i++)
         {
-            laneList.Add(createAndActivateLane(yPositionForLane));
-            yPositionForLane += 2;
+            Material material = laneMaterialsList[i];
+            // Use the material
+            if (material != null)
+            {
+                // Do something with the material
+                laneList.Add(createAndActivateLane(yPositionForLane));
+                laneList[i].transform.GetChild(0).
+                    GetComponent<Renderer>().material = material;
+                yPositionForLane += 2;
+            }
+            else
+            {
+                Debug.LogError("Material not found!");
+            }
         }
     }
 
@@ -57,7 +92,6 @@ public class LaneControllerScript : MonoBehaviour
             EventManagerScript.current.laneMovement();
         }
     }
-
 
     private void moveDown(GameObject lane)
     {
