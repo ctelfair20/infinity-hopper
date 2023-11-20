@@ -81,13 +81,13 @@ public class EventManagerScript : MonoBehaviour
         }
     }
 
-    public event Action<int, int> onActiveScoreUpdate;
+    public event Action<int, int> onActiveScoreAndDistanceUpdate;
 
-    public void activeScoreUpdate(int score, int distance)
+    public void activeScoreAndDistanceUpdate(int score, int distance)
     {
-        if (onActiveScoreUpdate != null)
+        if (onActiveScoreAndDistanceUpdate != null)
         {
-            onActiveScoreUpdate(score, distance);
+            onActiveScoreAndDistanceUpdate(score, distance);
         }
     }
 }

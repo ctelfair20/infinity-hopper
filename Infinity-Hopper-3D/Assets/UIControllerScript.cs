@@ -26,14 +26,17 @@ public class UIControllerScript : MonoBehaviour
         EventManagerScript.current.onFrogDeath += turnOnGameOverScreen;
         EventManagerScript.current.onDoubleClick += turnOnPauseScreen;
         EventManagerScript.current.onHighScoreUpdate += updateHighScoreDisplay;
-        EventManagerScript.current.onActiveScoreUpdate += updateActiveScoreDisplay;
+        EventManagerScript.current.onActiveScoreAndDistanceUpdate += updateActiveScoreAndDistanceDisplay;
     }
 
     // Button Functions
     public void startNewGame()
     {
-        // deactivate game over screen
-        toggleScreen(gameOverScreen);
+        // reload scene
+        Scene activeScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(activeScene.name);
+        // deactivate home over screen
+        toggleScreen(homeScreen);
     }
 
     public void quitGame()
@@ -67,9 +70,8 @@ public class UIControllerScript : MonoBehaviour
         }
     }
 
-    public void updateActiveScoreDisplay(int score, int distance)
+    public void updateActiveScoreAndDistanceDisplay(int score, int distance)
     {
-        //TODO: handle issue with the ten lanes all updating the score and distance
         // update the game over score and distance
         gameOverScore.text = "Score: " + score.ToString();
         gameOverDistance.text = "Distance: " + distance.ToString();
