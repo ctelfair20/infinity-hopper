@@ -1834,6 +1834,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DarkPurpleLane2
       objectReference: {fileID: 0}
+    - target: {fileID: 5581669574836870330, guid: 659d27d2742a84626b06e3f91ea4553d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5896550987581357854, guid: 659d27d2742a84626b06e3f91ea4553d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1891,6 +1895,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 659d27d2742a84626b06e3f91ea4553d, type: 3}
+--- !u!1 &1045751184 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1676328328151058459, guid: 3066b8be955464eeca12e2ae24153fe7, type: 3}
+  m_PrefabInstance: {fileID: 6771679657068365469}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1057480499
 GameObject:
   m_ObjectHideFlags: 0
@@ -2541,6 +2550,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DarkBlueLane2
       objectReference: {fileID: 0}
+    - target: {fileID: 1676328328151058459, guid: 3066b8be955464eeca12e2ae24153fe7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1965412803454404726, guid: 3066b8be955464eeca12e2ae24153fe7, type: 3}
       propertyPath: m_LocalScale.x
       value: 10
@@ -2771,6 +2784,10 @@ PrefabInstance:
     - target: {fileID: 1676328328151058459, guid: 3066b8be955464eeca12e2ae24153fe7, type: 3}
       propertyPath: m_Name
       value: GreyLane2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676328328151058459, guid: 3066b8be955464eeca12e2ae24153fe7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1965412803454404726, guid: 3066b8be955464eeca12e2ae24153fe7, type: 3}
       propertyPath: m_LocalScale.x
@@ -3050,6 +3067,10 @@ PrefabInstance:
     - target: {fileID: 1676328328151058459, guid: 3066b8be955464eeca12e2ae24153fe7, type: 3}
       propertyPath: m_Name
       value: BrownLane2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676328328151058459, guid: 3066b8be955464eeca12e2ae24153fe7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1965412803454404726, guid: 3066b8be955464eeca12e2ae24153fe7, type: 3}
       propertyPath: m_LocalScale.x
@@ -3611,7 +3632,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1982971895}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 752151969}
+        m_TargetAssemblyTypeName: UIControllerScript, Assembly-CSharp
+        m_MethodName: startNewGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1982971895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3903,6 +3936,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2052285922}
   m_CullTransparentMesh: 1
+--- !u!1 &2054086925
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2054086927}
+  - component: {fileID: 2054086926}
+  m_Layer: 0
+  m_Name: LaneController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2054086926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054086925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8698a975138ea46f9b7e21af30990961, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lane: {fileID: 1045751184}
+  laneList: []
+--- !u!4 &2054086927
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054086925}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 585, y: 1266, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &743306096272405935
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3962,6 +4041,10 @@ PrefabInstance:
     - target: {fileID: 1608795368057722417, guid: 3addcf759143e4ce691d17cdbce98ed2, type: 3}
       propertyPath: m_Name
       value: OrangeLane2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608795368057722417, guid: 3addcf759143e4ce691d17cdbce98ed2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5742336935358978205, guid: 3addcf759143e4ce691d17cdbce98ed2, type: 3}
       propertyPath: carPoolScript
@@ -4035,6 +4118,10 @@ PrefabInstance:
     - target: {fileID: 3078999105602272805, guid: 323e6f9578e464ebca3d610b1e22697c, type: 3}
       propertyPath: m_Name
       value: YellowLane2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3078999105602272805, guid: 323e6f9578e464ebca3d610b1e22697c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5659344113159946910, guid: 323e6f9578e464ebca3d610b1e22697c, type: 3}
       propertyPath: carPoolScript
@@ -4117,6 +4204,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreenLane2
       objectReference: {fileID: 0}
+    - target: {fileID: 7985635438060819774, guid: 3f7be3b68eb1e41ca93ceed614c7a111, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8106338457490746347, guid: 3f7be3b68eb1e41ca93ceed614c7a111, type: 3}
       propertyPath: m_Name
       value: GreenLane
@@ -4177,6 +4268,10 @@ PrefabInstance:
     - target: {fileID: 1676328328151058459, guid: 3066b8be955464eeca12e2ae24153fe7, type: 3}
       propertyPath: m_Name
       value: BlueLane2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676328328151058459, guid: 3066b8be955464eeca12e2ae24153fe7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1965412803454404726, guid: 3066b8be955464eeca12e2ae24153fe7, type: 3}
       propertyPath: m_LocalScale.x
@@ -4312,6 +4407,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MagentaLane2
       objectReference: {fileID: 0}
+    - target: {fileID: 5581669574836870330, guid: 659d27d2742a84626b06e3f91ea4553d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6827488634831801180, guid: 659d27d2742a84626b06e3f91ea4553d, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -4380,6 +4479,10 @@ PrefabInstance:
     - target: {fileID: 1272872914478312033, guid: 0a2443db771094da691f2e495f6c4019, type: 3}
       propertyPath: m_Name
       value: PurpleLane2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1272872914478312033, guid: 0a2443db771094da691f2e495f6c4019, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3972736523783600423, guid: 0a2443db771094da691f2e495f6c4019, type: 3}
       propertyPath: m_LocalScale.x
@@ -4465,3 +4568,4 @@ SceneRoots:
   - {fileID: 1771112276}
   - {fileID: 1791119817}
   - {fileID: 486610541}
+  - {fileID: 2054086927}
