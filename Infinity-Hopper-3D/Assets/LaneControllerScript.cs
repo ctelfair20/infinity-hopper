@@ -8,16 +8,8 @@ public class LaneControllerScript : MonoBehaviour
     public List<GameObject> laneList = new List<GameObject>();
     public List<string> laneMaterialNames = new List<string>
     {
-        "BlueRoad",
-        "YellowRoad",
-        "MagentaRoad",
-        "DarkPurpleRoad",
-        "GreenRoad",
-        "DarkBlueRoad",
-        "OrangeRoad",
-        "PurpleRoad",
-        "BrownRoad",
-        "CarMaterial",
+        "BlueRoad","YellowRoad","MagentaRoad","DarkPurpleRoad","GreenRoad",
+        "DarkBlueRoad","OrangeRoad","PurpleRoad","BrownRoad","CarMaterial",
     };
     public List<Material> laneMaterialsList = new List<Material>();
 
