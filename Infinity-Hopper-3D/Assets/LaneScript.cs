@@ -16,12 +16,15 @@ public class LaneScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // if the very first lane in the game,
         if (transform.position == new Vector3(0, -2, 0))
         {
+            // don't spawn cars
             canGetCar = false;
         }
         else
         {
+            // any other lane should get new cars and new car values
             updateLaneVariablesOnPop(transform.position);
             carPoolScript.grabCarDataFromLaneScript(
                 gameObject, speed, rotation, offsetPosition);
@@ -31,6 +34,7 @@ public class LaneScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // check to see if this lane is NOT the first lane
         if (canGetCar)
         {
             carSpawerTimer();
