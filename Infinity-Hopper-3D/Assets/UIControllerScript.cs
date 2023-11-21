@@ -8,7 +8,6 @@ using UnityEngine.UI;
 
 public class UIControllerScript : MonoBehaviour
 {
-    
     public GameObject pauseScreen;
     public GameObject homeScreen;
     public GameObject gameOverScreen;
@@ -64,11 +63,10 @@ public class UIControllerScript : MonoBehaviour
         SceneManager.LoadScene(activeScene.name);
     }
 
+    // add current score and distance to highscore list
     //TODO: if frog is hit twice, then this func will run twice 
     public void updateHighScoreDisplay(List<ScoreDistance> highScoreList)
     {
-        // add current score and distance to highscore list
-        Debug.Log(highScoreList[0].Score);
         // sort highScoreList from highest score to lowest score
         SortHighScoreList(highScoreList);
         // sort highScoreList from highest distance to lowest distance
@@ -77,15 +75,11 @@ public class UIControllerScript : MonoBehaviour
     //TODO: Continue working on this algorithm 
     public void SortHighScoreList(List<ScoreDistance> highScoreList)
     {
-        Debug.Log("Score Distance List");
         highScoreList.Sort((obj1, obj2) => obj1.Score.CompareTo(obj2.Score));
-        Debug.Log("highacore list sorts");
 
         for (int i = 0; i < highScoreList.Count; i++)
         {
-            ScoreDistance scoreDistance = highScoreList[i];
-            //Debug.Log("Score: " + scoreDistance.Score + ", Distance: " + scoreDistance.Distance);
-            createRow(scoreDistance);
+            createRow(highScoreList[i]);
         }
     }
 
@@ -100,9 +94,7 @@ public class UIControllerScript : MonoBehaviour
         // set their values with the parameter
         rowTextComps[0].text = scoreDistanceObj.Score.ToString();
         rowTextComps[1].text = scoreDistanceObj.Distance.ToString();
-        Debug.Log("s: " + rowTextComps[0].text);
-        Debug.Log("d: " + rowTextComps[1].text);
-        // position row
+        // TODO: position row?
     }
 
     public void updateActiveScoreAndDistanceDisplay(int score, int distance)
