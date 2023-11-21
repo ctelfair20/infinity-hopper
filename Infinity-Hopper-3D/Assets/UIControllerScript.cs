@@ -15,6 +15,7 @@ public class UIControllerScript : MonoBehaviour
     public Text gameOverScore;
     public Text gameOverDistance;
     public GameObject highScoreListScreen;
+    public GameObject row;
     public GameObject activeGameUIScreen;
     public Text activeUIScore;
     public Text activeUIDistance;
@@ -39,6 +40,21 @@ public class UIControllerScript : MonoBehaviour
         toggleScreen(homeScreen);
     }
 
+    public void HighScoreButton()
+    {
+        toggleScreen(highScoreListScreen);
+    }
+
+    public void HomeButton()
+    {
+        toggleScreen(highScoreListScreen);
+    }
+
+    public void closeButton()
+    {
+        toggleScreen(highScoreListScreen);
+    }
+
     public void quitGame()
     {
         // deactivate pause over screen
@@ -61,13 +77,32 @@ public class UIControllerScript : MonoBehaviour
     //TODO: Continue working on this algorithm 
     public void SortHighScoreList(List<ScoreDistance> highScoreList)
     {
-        Debug.Log("Score Distance List:");
+        Debug.Log("Score Distance List");
+        highScoreList.Sort((obj1, obj2) => obj1.Score.CompareTo(obj2.Score));
+        Debug.Log("highacore list sorts");
 
         for (int i = 0; i < highScoreList.Count; i++)
         {
             ScoreDistance scoreDistance = highScoreList[i];
-            Debug.Log("Score: " + scoreDistance.Score + ", Distance: " + scoreDistance.Distance);
+            //Debug.Log("Score: " + scoreDistance.Score + ", Distance: " + scoreDistance.Distance);
+            createRow(scoreDistance);
         }
+    }
+
+    public void createRow(ScoreDistance scoreDistanceObj)
+    {
+        // access the highScoreTable gameobject from the screen
+        Transform highScoreTable = highScoreListScreen.transform.GetChild(1);
+        // create a row and set row's parent to be the highscoretable comp
+        GameObject rowInstance = Instantiate(row, highScoreTable);
+        // access row's score and distance children
+        Text[] rowTextComps = rowInstance.GetComponentsInChildren<Text>();
+        // set their values with the parameter
+        rowTextComps[0].text = scoreDistanceObj.Score.ToString();
+        rowTextComps[1].text = scoreDistanceObj.Distance.ToString();
+        Debug.Log("s: " + rowTextComps[0].text);
+        Debug.Log("d: " + rowTextComps[1].text);
+        // position row
     }
 
     public void updateActiveScoreAndDistanceDisplay(int score, int distance)
