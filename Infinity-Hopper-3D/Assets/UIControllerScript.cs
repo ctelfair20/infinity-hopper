@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Device;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -72,7 +71,6 @@ public class UIControllerScript : MonoBehaviour
         // sort highScoreList from highest distance to lowest distance
     }
     
-    //TODO: Continue working on this algorithm 
     public void SortHighScoreList(List<ScoreDistance> highScoreList)
     {
         highScoreList.Sort((obj1, obj2) => obj1.Score.CompareTo(obj2.Score));
