@@ -76,7 +76,7 @@ public class LaneControllerScript : MonoBehaviour
         // move lane down by 2 on y axis
 
         // check of up arrow press
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) && isLaneMovementActive)
         {
             // move all lanes down by one lane
             for (int i = 0; i < laneList.Count; i++)
