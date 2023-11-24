@@ -73,6 +73,7 @@ public class FrogScript : MonoBehaviour
     {
         if (collision.gameObject.name == "Car(Clone)" && alive)
         {
+            alive = false;
             EventManagerScript.current.frogDeath();
         }
     }
