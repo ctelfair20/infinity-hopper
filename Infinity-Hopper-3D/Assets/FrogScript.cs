@@ -26,12 +26,12 @@ public class FrogScript : MonoBehaviour
 
     private void frogMovement()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow) && alive)
         {
             //move frog right
             frogMoveRight();
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && alive)
         {
             //move frog left
             frogMoveLeft();
@@ -71,7 +71,7 @@ public class FrogScript : MonoBehaviour
     //TODO: if frog is hit multiple times, the gameover screen will toggle off and on
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "Car(Clone)")
+        if (collision.gameObject.name == "Car(Clone)" && alive)
         {
             EventManagerScript.current.frogDeath();
         }
