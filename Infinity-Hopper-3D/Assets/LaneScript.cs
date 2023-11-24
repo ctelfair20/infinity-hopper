@@ -42,36 +42,6 @@ public class LaneScript : MonoBehaviour
         popToTheTop();
     }
 
-    //private void onTapMoveDown()
-    //{
-    //    // check for touch
-    //        // if the position of the touch at the end is above the frog
-    //            // move lane down by 2 on y axis
-
-    //    // check of up arrow press
-    //    if (Input.GetKeyDown(KeyCode.UpArrow))
-    //    {
-    //        // Dispatch action
-    //        EventManagerScript.current.laneMovement();
-
-    //        // call moveDown
-    //        moveDown();
-    //    }
-    //}
-
-    //private void moveDown()
-    //{
-    //    // grab current position
-    //    Vector3 currentPosition = transform.position;
-    //    // set current y axis to 2 less than itself
-    //    float newYPosition = currentPosition.y - 2;
-    //    // reposition lane to new y axis value
-    //    transform.position = new Vector3(currentPosition.x, newYPosition, currentPosition.z);
-
-    //    // move lane to top if necessary
-    //    popToTheTop();
-    //}
-
     private void popToTheTop()
     {
         // grab current position
