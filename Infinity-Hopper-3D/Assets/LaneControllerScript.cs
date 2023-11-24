@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LaneControllerScript : MonoBehaviour
 {
+    bool isLaneMovementActive = false;
+
     [SerializeField] public GameObject lane;
     public List<GameObject> laneList = new List<GameObject>();
     public List<string> laneMaterialNames = new List<string>
@@ -16,6 +18,8 @@ public class LaneControllerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        EventManagerScript.current.onHomeSreenNewGameClick += updateIsLaneMovementActive;
+
         generateListOfMaterials();
         generate10Lanes();
     }
@@ -93,5 +97,10 @@ public class LaneControllerScript : MonoBehaviour
         float newYPosition = currentPosition.y - 2;
         // reposition lane to new y axis value
         lane.transform.position = new Vector3(currentPosition.x, newYPosition, currentPosition.z);
+    }
+
+    private void updateIsLaneMovementActive()
+    {
+        isLaneMovementActive = true;
     }
 }
