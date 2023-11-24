@@ -97,7 +97,7 @@ public class EventManagerScript : MonoBehaviour
     {
         if(onHomeSreenNewGameClick != null)
         {
-            homeSreenNewGameClick();
+            onHomeSreenNewGameClick();
         }
     }
 }
