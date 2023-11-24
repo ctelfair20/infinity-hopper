@@ -19,6 +19,7 @@ public class LaneControllerScript : MonoBehaviour
     void Start()
     {
         EventManagerScript.current.onHomeSreenNewGameClick += updateIsLaneMovementActive;
+        EventManagerScript.current.onFrogDeath += updateIsLaneMovementActive;
 
         generateListOfMaterials();
         generate10Lanes();
@@ -101,6 +102,13 @@ public class LaneControllerScript : MonoBehaviour
 
     private void updateIsLaneMovementActive()
     {
-        isLaneMovementActive = true;
+        if(isLaneMovementActive) {
+
+            isLaneMovementActive = false;
+        }
+        else
+        {
+            isLaneMovementActive = true;
+        }
     }
 }
