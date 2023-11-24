@@ -90,4 +90,14 @@ public class EventManagerScript : MonoBehaviour
             onActiveScoreAndDistanceUpdate(score, distance);
         }
     }
+
+    public event Action onHomeSreenNewGameClick;
+
+    public void homeSreenNewGameClick()
+    {
+        if(onHomeSreenNewGameClick != null)
+        {
+            homeSreenNewGameClick();
+        }
+    }
 }
