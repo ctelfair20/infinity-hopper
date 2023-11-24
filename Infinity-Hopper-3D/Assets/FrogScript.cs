@@ -5,12 +5,23 @@ using UnityEngine;
 public class FrogScript : MonoBehaviour
 {
     int clicked = -1;
+    bool alive = false;
+
+    private void Start()
+    {
+        EventManagerScript.current.onHomeSreenNewGameClick += updateFrogAlive;
+    }
 
     // Update is called once per frame
     void Update()
     {
         frogMovement();
         checkForDoubleClick();
+    }
+
+    private void updateFrogAlive()
+    {
+        alive = true;
     }
 
     private void frogMovement()
