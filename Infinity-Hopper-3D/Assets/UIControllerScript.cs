@@ -112,12 +112,15 @@ public class UIControllerScript : MonoBehaviour
         toggleScreen(homeScreen);
     }
 
+    //Called when the new game button on the home screen is pressed
     public void turnOffHomescreen()
     {
         // deactivate home
         toggleScreen(homeScreen);
         // activate the active game ui
         toggleScreen(activeGameUIScreen);
+        // dispatch event action
+        EventManagerScript.current.homeSreenNewGameClick();
     }
 
     public void turnOnGameOverScreen()
