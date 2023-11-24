@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 32941221}
   m_Layer: 0
   m_Name: CarPool
-  m_TagString: Untagged
+  m_TagString: CarPool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3365,7 +3365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8698a975138ea46f9b7e21af30990961, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lane: {fileID: 0}
+  lane: {fileID: 1676328328151058459, guid: 3066b8be955464eeca12e2ae24153fe7, type: 3}
   laneList: []
   laneMaterialNames:
   - BlueRoad

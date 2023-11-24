@@ -8,6 +8,7 @@ TagManager:
   - RoadSpawner
   - Road
   - car
+  - CarPool
   layers:
   - Default
   - TransparentFX

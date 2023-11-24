@@ -16,6 +16,7 @@ public class LaneScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        carPoolScript = GameObject.FindGameObjectWithTag("CarPool").GetComponent<CarPoolScript>();
         // if the very first lane in the game,
         if (transform.position == new Vector3(0, -2, 0))
         {
