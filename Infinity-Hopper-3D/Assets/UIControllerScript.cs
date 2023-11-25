@@ -114,6 +114,11 @@ public class UIControllerScript : MonoBehaviour
             // activate home
             toggleScreen(homeScreen);
         }
+        else if (activeScene.name == "Scene v2 (new game)")
+        {
+            toggleScreen(activeGameUIScreen);
+        }
+
     }
 
     //Called when the new game button on the home screen is pressed
