@@ -81,12 +81,12 @@ public class LaneScript : MonoBehaviour
 
         if (leftOrRight == 1)
         {
-            offsetPosition = new Vector3(-3, transform.position.y, transform.position.z);
+            offsetPosition = new Vector3(-6, transform.position.y, transform.position.z);
             rotation = new Vector3(0, 0, 90);
         }
         else if (leftOrRight == 2)
         {
-            offsetPosition = new Vector3(3, transform.position.y, transform.position.z);
+            offsetPosition = new Vector3(6, transform.position.y, transform.position.z);
             rotation = new Vector3(0, 0, 270);
         }
 
