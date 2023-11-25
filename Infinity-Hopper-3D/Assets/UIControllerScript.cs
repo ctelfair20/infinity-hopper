@@ -31,11 +31,8 @@ public class UIControllerScript : MonoBehaviour
     // Button Functions
     public void startNewGame()
     {
-        // reload scene
-        Scene activeScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(activeScene.name);
-        // deactivate home over screen
-        toggleScreen(homeScreen);
+        // load Scene v2 (new game)
+        SceneManager.LoadScene("Scene v2 (new game)");
     }
 
     public void HighScoreButton()
