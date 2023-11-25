@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class LaneControllerScript : MonoBehaviour
@@ -23,6 +24,7 @@ public class LaneControllerScript : MonoBehaviour
 
         generateListOfMaterials();
         generate10Lanes();
+        setIsLaneMovementActive();
     }
 
     // Update is called once per frame
@@ -98,6 +100,18 @@ public class LaneControllerScript : MonoBehaviour
         float newYPosition = currentPosition.y - 2;
         // reposition lane to new y axis value
         lane.transform.position = new Vector3(currentPosition.x, newYPosition, currentPosition.z);
+    }
+
+    private void setIsLaneMovementActive()
+    {
+        if (SceneManager.GetActiveScene().name == "Scene v2")
+        {
+            isLaneMovementActive = false;
+        }
+        else
+        {
+            isLaneMovementActive = true;
+        }
     }
 
     private void updateIsLaneMovementActive()

@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class FrogScript : MonoBehaviour
 {
     int clicked = -1;
-    bool alive = false;
+    bool alive;
 
     private void Start()
     {
         EventManagerScript.current.onHomeSreenNewGameClick += updateFrogAlive;
+
+        setFrogAlive();
     }
 
     // Update is called once per frame
@@ -19,6 +22,17 @@ public class FrogScript : MonoBehaviour
         checkForDoubleClick();
     }
 
+    private void setFrogAlive()
+    {
+        if (SceneManager.GetActiveScene().name == "Scene v2")
+        {
+            alive = false;
+        }
+        else
+        {
+            alive = true;
+        }
+    }
     private void updateFrogAlive()
     {
         alive = true;
