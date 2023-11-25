@@ -108,7 +108,7 @@ public class UIControllerScript : MonoBehaviour
     public void turnOnHomescreen()
     {
         Scene activeScene = SceneManager.GetActiveScene();
-        Debug.Log($"activeScene: {activeScene.name}");
+
         if (activeScene.name == "Scene v2")
         {
             // activate home
