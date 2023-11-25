@@ -40,7 +40,9 @@ public class UIControllerScript : MonoBehaviour
 
     public void HighScoreButton()
     {
+        
         toggleScreen(highScoreListScreen);
+        
     }
 
     public void HomeButton()
@@ -108,8 +110,13 @@ public class UIControllerScript : MonoBehaviour
     //Toggle Functions
     public void turnOnHomescreen()
     {
-        // activate home
-        toggleScreen(homeScreen);
+        Scene activeScene = SceneManager.GetActiveScene();
+        Debug.Log($"activeScene: {activeScene.name}");
+        if (activeScene.name == "Scene v2")
+        {
+            // activate home
+            toggleScreen(homeScreen);
+        }
     }
 
     //Called when the new game button on the home screen is pressed
