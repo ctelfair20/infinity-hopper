@@ -29,7 +29,7 @@ public class UIControllerScript : MonoBehaviour
     }
 
     // Button Functions
-    public void startNewGame()
+    public void startNewGameFromGameOverButton()
     {
         // load Scene v2 (new game)
         SceneManager.LoadScene("Scene v2 (new game)");
@@ -37,9 +37,7 @@ public class UIControllerScript : MonoBehaviour
 
     public void HighScoreButton()
     {
-        
         toggleScreen(highScoreListScreen);
-        
     }
 
     public void MainMenuButton()
