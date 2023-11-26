@@ -42,9 +42,10 @@ public class UIControllerScript : MonoBehaviour
         
     }
 
-    public void HomeButton()
+    public void MainMenuButton()
     {
-        toggleScreen(highScoreListScreen);
+        // load Scene v2
+        SceneManager.LoadScene("Scene v2");
     }
 
     public void closeButton()
@@ -62,7 +63,6 @@ public class UIControllerScript : MonoBehaviour
     }
 
     // add current score and distance to highscore list
-    //TODO: if frog is hit twice, then this func will run twice 
     public void updateHighScoreDisplay(List<ScoreDistance> highScoreList)
     {
         // sort highScoreList from highest score to lowest score
