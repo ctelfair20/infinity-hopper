@@ -12,7 +12,6 @@ public class PlayerInventoryScript : MonoBehaviour
     {
         EventManagerScript.current.onFrogDeath += updateHighScoreList;
         EventManagerScript.current.onLaneMovement += updateActiveScoreAndDistance;
-        //EventManagerScript.current.onGameLoad += startNewScoreDistance;
     }
 
     void AddScoreDistance(int score, int distance)
@@ -37,11 +36,6 @@ public class PlayerInventoryScript : MonoBehaviour
         //Debug.Log("score and distance increased!");
         EventManagerScript.current.activeScoreAndDistanceUpdate(score, distance);
     }
-
-    //public void startNewScoreDistance()
-    //{
-
-    //}
 }
 
 // Custom class for score and distance
