@@ -41,6 +41,8 @@ public class UIControllerScript : MonoBehaviour
         toggleScreen(highScoreListScreen);
     }
 
+    // This button is ran when the main menu button from the game over
+    // AND the quit button on the pause screen is pressed
     public void MainMenuButton()
     {
         // load Scene v2
