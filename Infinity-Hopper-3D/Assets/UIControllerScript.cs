@@ -29,6 +29,7 @@ public class UIControllerScript : MonoBehaviour
     }
 
     // Button Functions
+    // This function runs when the new game button on the game over screen is pressed
     public void startNewGameFromGameOverButton()
     {
         // load Scene v2 (new game)
@@ -49,15 +50,6 @@ public class UIControllerScript : MonoBehaviour
     public void closeButton()
     {
         toggleScreen(highScoreListScreen);
-    }
-
-    public void quitGame()
-    {
-        // deactivate pause over screen
-        toggleScreen(pauseScreen);
-        // reload scene
-        Scene activeScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(activeScene.name);
     }
 
     // add current score and distance to highscore list
