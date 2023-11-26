@@ -10,13 +10,13 @@ public class CarPoolScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // instantiate 16 cars
-        generate16Cars();
+        // instantiate 40 cars
+        generate40Cars();
     }
 
-    private void generate16Cars()
+    private void generate40Cars()
     {
-        for (int i = 0; i < 16; i++)
+        for (int i = 0; i < 40; i++)
         {
             GameObject car = createCar();
             car.SetActive(false);
